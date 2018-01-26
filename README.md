@@ -1,0 +1,2 @@
+# Jsnake
+Browser game
