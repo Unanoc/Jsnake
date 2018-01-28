@@ -60,3 +60,12 @@ table {
     width: 43.5%;
 
 }
+
+.game_over {
+    color: red;
+    float: left;
+    font-size: 60px;
+    font-family: "Ubuntu Mono";
+    margin-top: 2%;
+    margin-right: 2%;
+}

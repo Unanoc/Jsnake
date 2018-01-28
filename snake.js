@@ -112,6 +112,7 @@ function gameLoop() {
     if (running && !gameOver) {
         update();
     } else if (gameOver) {
+        document.getElementById("gameover").innerHTML = "GAME OVER";
         clearInterval(int);
     }
 }
@@ -145,7 +146,7 @@ function update() {
         length += increment;
     }
 
-    document.getElementById("score").innerHTML = "Score: " + score;
+        document.getElementById("score").innerHTML = "Score: " + score;
 }
 
 function updateTail() {
