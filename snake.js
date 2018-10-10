@@ -1,21 +1,21 @@
 //settings
-var snakeX = 2;
-var snakeY = 2;
-var height = 30;
-var width = 30;
-var interval = 100;
-var increment = 1;
+let snakeX = 2;
+let snakeY = 2;
+let height = 30;
+let width = 30;
+let interval = 100;
+let increment = 1;
 
-//game var
-var tailX = [snakeX];
-var tailY = [snakeY];
-var fX;
-var fY;
-var running = false;
-var gameOver = false;
-var score = 0;
-var direction = -1; // up = 0, down = -1, left = 1, right = 2
-var int;
+//game vars
+let tailX = [snakeX];
+let tailY = [snakeY];
+let fX;
+let fY;
+let running = false;
+let gameOver = false;
+let score = 0;
+let direction = -1; // up = 0, down = -1, left = 1, right = 2
+let int;
 
 
 function run() {
@@ -32,10 +32,10 @@ function init() {
 //Map generating
 function createMap() {
     document.write("<table>");
-    for (var y = 0; y < height; y++) {
+    for (let y = 0; y < height; y++) {
         document.write("<tr>");
 
-        for (var x = 0; x < width; x++) {
+        for (let x = 0; x < width; x++) {
             if (x === 0 || x === width - 1 || y === 0 || y === height - 1) {
                 document.write("<td class='wall' id='"+ x + "-" + y +"'></td>");
             }
@@ -74,10 +74,10 @@ function rand(min, max) {
 
 //fruit
 function createFruit() {
-    var found = false;
+    let found = false;
     while (!found && (length < (width - 2) * (height - 2) + 1)) {
-        var fruitX = rand(1, width - 1);
-        var fruitY = rand(1, height - 1);
+        let fruitX = rand(1, width - 1);
+        let fruitY = rand(1, height - 1);
         if (getType(fruitX, fruitY) === "blank")
             found = true;
     }
@@ -89,7 +89,7 @@ function createFruit() {
 
 window.addEventListener("keypress", function key() {
     //if key is W set direction UP
-    var key = event.keyCode;
+    let key = event.keyCode;
     if (direction !== -1 && (key === 119 || key === 87))
         direction = 0;
     //if key is S set direction DOWN
@@ -131,7 +131,7 @@ function update() {
         snakeX++;
     set(snakeX, snakeY, "snake");
 
-    for (var i = tailX.length - 1; i >= 0; i--) {
+    for (let i = tailX.length - 1; i >= 0; i--) {
         if (snakeX === tailX[i] && snakeY === tailY[i]) {
             gameOver = true;
             break;
@@ -146,11 +146,11 @@ function update() {
         length += increment;
     }
 
-        document.getElementById("score").innerHTML = "Score: " + score;
+        document.getElementById("score").innerHTML = `Score: ${score}`;
 }
 
 function updateTail() {
-    for (var i = length; i > 0; i--) {
+    for (let i = length; i > 0; i--) {
         tailX[i] = tailX[i-1];
         tailY[i] = tailY[i-1];
     }
