@@ -1,5 +1,5 @@
-# Jsnake
+# snake-game
 A simple browser game on JS.
 
-# Example
-<img src="https://github.com/Unanoc/Jsnake/blob/master/src/sample.png" width="720">
+# How it looks like...
+<img src="https://github.com/leedaniil/snake-game/blob/master/src/sample.png" width="720">
